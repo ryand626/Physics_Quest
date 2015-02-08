@@ -46,6 +46,7 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\ElectrostaticForce.cs" />
      <Compile Include="Assets\Scripts\Gravitate.cs" />
      <Compile Include="Assets\Scripts\Polarity.cs" />
      <Compile Include="Assets\Scripts\Score.cs" />
