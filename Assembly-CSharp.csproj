@@ -46,8 +46,9 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Gravitate.cs" />
+     <Compile Include="Assets\Scripts\Gravitate.cs" />
      <Compile Include="Assets\Scripts\Polarity.cs" />
+     <Compile Include="Assets\Scripts\Score.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/4.6.1/UnityEngine.UI.dll</HintPath>
  </Reference>

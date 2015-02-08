@@ -1,8 +1,10 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Polarity.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Score.cs">
     <Files>
       <File FileName="Assets/Scripts/Polarity.cs" Line="21" Column="23" />
+      <File FileName="Assets/Gravitate.cs" Line="29" Column="35" />
+      <File FileName="Assets/Score.cs" Line="7" Column="2" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

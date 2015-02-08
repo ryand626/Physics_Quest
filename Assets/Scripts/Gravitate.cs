@@ -26,6 +26,7 @@ public class Gravitate : MonoBehaviour {
 			if(!polarity.state){
 				magnitude *= -1;
 			}
+			magnitude *= polarity.strength;
 
 			// Add the force to the overall force
 			constantForce.force = constantForce.force + (magnitude * direction);
