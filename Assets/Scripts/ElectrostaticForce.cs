@@ -6,10 +6,13 @@ public class ElectrostaticForce : MonoBehaviour {
 	public float k;
 	public float q1;
 	public float q2;
+	public float str;
+	public bool state;
 	public List<GameObject> Players;
 	
 	
 	void Start () {
+		str = 7f; // strength constant
 		k = 1f; // Constant
 		q1 = 1f;
 		q2 = 1f;
@@ -23,12 +26,18 @@ public class ElectrostaticForce : MonoBehaviour {
 		foreach (GameObject player in Players){
 			// Check the polarity and alter the magnitude accordingly
 			Polarity polarity = player.GetComponent<Polarity>(); 
-			if(!polarity.state){
+			/*if(!polarity.state){
 				q2 = -1f;
 			}else{
 				q2 = 1f;
+			}*/
+			if(state) {
+				q2 = -1f;
 			}
-			q2 *= polarity.strength;
+			else {
+				q2 = 1f;
+			}
+			q2 *= polarity.strength * str * str * str;
 
 			// Calculate the magnitude and direction
 			float magnitude = (k * q1 * q2) / Vector3.SqrMagnitude(player.transform.position - gameObject.transform.position);
@@ -39,4 +48,6 @@ public class ElectrostaticForce : MonoBehaviour {
 			constantForce.force = constantForce.force + (magnitude * direction);
 		}
 	}
+
+
 }

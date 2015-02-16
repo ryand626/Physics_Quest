@@ -13,7 +13,7 @@ public class Gravitate : MonoBehaviour {
 
 	void Update () {
 		// Recalculate the force on the ball
-		constantForce.force = Vector3.zero; // Get rid of the previous force calculations
+		/*constantForce.force = Vector3.zero; // Get rid of the previous force calculations
 
 		// For every player, calculate the force applied to the ball
 		foreach (GameObject player in Players){
@@ -30,6 +30,6 @@ public class Gravitate : MonoBehaviour {
 
 			// Add the force to the overall force
 			constantForce.force = constantForce.force + (magnitude * direction);
-		}
+		}*/
 	}
 }
