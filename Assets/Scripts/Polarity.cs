@@ -44,6 +44,7 @@ public class Polarity : MonoBehaviour {
 	}
 
 	public void SubtractStrength(){
+		Debug.Log ("herrr");
 		if (strength > 1) {
 			strength--;
 		}

@@ -44,7 +44,7 @@ public class ElectrostaticForce : MonoBehaviour {
 
 			
 			// Add the force to the overall force
-			constantForce.force = constantForce.force + (magnitude * direction);
+			constantForce.force = (constantForce.force + (magnitude * direction))/1.5f;
 		}
 	}
 

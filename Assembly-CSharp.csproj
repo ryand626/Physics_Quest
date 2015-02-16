@@ -48,10 +48,36 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\ElectrostaticForce.cs" />
      <Compile Include="Assets\Scripts\Gravitate.cs" />
+     <Compile Include="Assets\Scripts\Minus.cs" />
+     <Compile Include="Assets\Scripts\Plus.cs" />
      <Compile Include="Assets\Scripts\Polarity.cs" />
      <Compile Include="Assets\Scripts\Score.cs" />
+     <Compile Include="Assets\Scripts\ftl\ftlBlobDebugger.cs" />
+     <Compile Include="Assets\Scripts\ftl\ftlFlick.cs" />
+     <Compile Include="Assets\Scripts\ftl\ftlLongPress.cs" />
+     <Compile Include="Assets\Scripts\ftl\ftlManager.cs" />
+     <Compile Include="Assets\Scripts\ftl\ftlPan.cs" />
+     <Compile Include="Assets\Scripts\ftl\ftlPressAndRelease.cs" />
+     <Compile Include="Assets\Scripts\ftl\ftlRotate.cs" />
+     <Compile Include="Assets\Scripts\ftl\ftlScale.cs" />
+     <Compile Include="Assets\Scripts\ftl\ftlTap.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/4.6.0/UnityEngine.UI.dll</HintPath>
+ </Reference>
+ <Reference Include="OSCsharp">
+ <HintPath>/Users/vbonish/Senior/Physics_Quest/Assets/Scripts/TS/OSCsharp.dll</HintPath>
+ </Reference>
+ <Reference Include="TouchScript">
+ <HintPath>/Users/vbonish/Senior/Physics_Quest/Assets/Scripts/TS/TouchScript.dll</HintPath>
+ </Reference>
+ <Reference Include="TouchScript.TUIO">
+ <HintPath>/Users/vbonish/Senior/Physics_Quest/Assets/Scripts/TS/TouchScript.TUIO.dll</HintPath>
+ </Reference>
+ <Reference Include="TouchScript.Windows">
+ <HintPath>/Users/vbonish/Senior/Physics_Quest/Assets/Scripts/TS/TouchScript.Windows.dll</HintPath>
+ </Reference>
+ <Reference Include="TUIOsharp">
+ <HintPath>/Users/vbonish/Senior/Physics_Quest/Assets/Scripts/TS/TUIOsharp.dll</HintPath>
  </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
