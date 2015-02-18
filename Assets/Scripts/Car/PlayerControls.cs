@@ -15,14 +15,22 @@ public class PlayerControls : MonoBehaviour {
 
 
 	void Start () {
-		playerSpeed = 4f;
+		playerSpeed = 2f;
 		playerDirection = 1f;
 	}
 	
 	// Move the car according to the road speed, and the car speed
 	void Update () {
-		offset = Road.backgroundSpeed * Road.backgroundDirection + playerSpeed * playerDirection;
+		//Road.backgroundSpeed * Road.backgroundDirection * .2f +
+		offset =  playerSpeed * playerDirection * Road.backgroundDirection;
 		transform.Translate (offset * Time.deltaTime, 0f, 0f);
+
+		if (Input.GetKey (KeyCode.A)) {
+			Accelerate();
+		}
+		if (Input.GetKey (KeyCode.B)) {
+			Brake();
+		}
 	}
 
 	// Accelerate the car up to the top_speed
