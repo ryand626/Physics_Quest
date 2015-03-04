@@ -18,6 +18,7 @@ public class Plus : MonoBehaviour {
 	
 	private void tapHandler(object sender, GestureStateChangeEventArgs gestureStateChangeEventArgs)
 	{
+		print ("plus");
 		player.SendMessage ("AddStrength");
 	}
 }

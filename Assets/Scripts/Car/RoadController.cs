@@ -32,10 +32,10 @@ public class RoadController : MonoBehaviour {
 	}
 
 	void UpdateBackground(){
-		First.scrollSpeed = backgroundSpeed;
-		Second.scrollSpeed = backgroundSpeed;
+		//First.scrollSpeed = backgroundSpeed;
+		//Second.scrollSpeed = backgroundSpeed;
 
-		First.scrollDirection = backgroundDirection;
-		Second.scrollDirection = backgroundDirection;
+		//First.scrollDirection = backgroundDirection;
+		//Second.scrollDirection = backgroundDirection;
 	}
 }

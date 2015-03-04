@@ -18,6 +18,7 @@ public class Minus : MonoBehaviour {
 
 	private void tapHandler(object sender, GestureStateChangeEventArgs gestureStateChangeEventArgs)
 	{
+		print ("minusss");
 		player.SendMessage ("SubtractStrength");
 	}
 }

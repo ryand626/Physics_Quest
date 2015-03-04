@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 
 public class ElectrostaticForce : MonoBehaviour {
 	public float k;
@@ -9,12 +10,14 @@ public class ElectrostaticForce : MonoBehaviour {
 	public float str;
 	public bool state;
 	public List<GameObject> Players;
+	private Text text;
 	
 	
 	void Start () {
 		k = 1f; // Constant
 		q1 = 1f;
 		q2 = 1f;
+		text = GetComponent<Text> ();
 	}
 	
 	void Update () {
@@ -32,9 +35,11 @@ public class ElectrostaticForce : MonoBehaviour {
 			}*/
 			if(state) {
 				q2 = -1f;
+				text.text = "+";
 			}
 			else {
 				q2 = 1f;
+				text.text = "-";
 			}
 			q2 *= polarity.strength;
 
