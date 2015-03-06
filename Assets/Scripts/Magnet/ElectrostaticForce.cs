@@ -22,7 +22,7 @@ public class ElectrostaticForce : MonoBehaviour {
 	
 	void Update () {
 		// Recalculate the force on the ball
-		constantForce.force = Vector3.zero; // Get rid of the previous force calculations
+		GetComponent<ConstantForce>().force = Vector3.zero; // Get rid of the previous force calculations
 		
 		// For every player, calculate the force applied to the ball
 		foreach (GameObject player in Players){
@@ -49,7 +49,7 @@ public class ElectrostaticForce : MonoBehaviour {
 
 			
 			// Add the force to the overall force
-			constantForce.force = (constantForce.force + (magnitude * direction))/1.5f;
+			GetComponent<ConstantForce>().force = (GetComponent<ConstantForce>().force + (magnitude * direction))/1.5f;
 		}
 	}
 

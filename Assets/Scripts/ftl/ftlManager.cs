@@ -15,9 +15,9 @@ public class ftlManager : MonoBehaviour
 
 	public Vector3 transformToObject (Vector3 _vertex, GameObject _object)
 	{
-		var ratio = new Vector2 (_object.collider.bounds.size.x / Screen.width , _object.collider.bounds.size.y / Screen.height);
-		_vertex.x = _object.collider.bounds.center.x + (ratio.x * _vertex.x) - _object.collider.bounds.size.x / 2;
-		_vertex.y = -_object.collider.bounds.center.y + (ratio.y * _vertex.y) - _object.collider.bounds.size.y / 2;
+		var ratio = new Vector2 (_object.GetComponent<Collider>().bounds.size.x / Screen.width , _object.GetComponent<Collider>().bounds.size.y / Screen.height);
+		_vertex.x = _object.GetComponent<Collider>().bounds.center.x + (ratio.x * _vertex.x) - _object.GetComponent<Collider>().bounds.size.x / 2;
+		_vertex.y = -_object.GetComponent<Collider>().bounds.center.y + (ratio.y * _vertex.y) - _object.GetComponent<Collider>().bounds.size.y / 2;
 		_vertex = Camera.main.WorldToScreenPoint (_vertex);		
 		return _vertex;
 	}

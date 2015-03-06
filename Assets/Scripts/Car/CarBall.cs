@@ -32,7 +32,7 @@ public class CarBall : MonoBehaviour {
 
 		if (Input.GetKeyDown(KeyCode.Escape)) { Application.Quit(); } 
 
-		if (Car.transform.GetChild (0).renderer.bounds.Intersects (renderer.bounds)) {//this doesn't work, should just make a rectangle, or do ray casting
+		if (Car.transform.GetChild (0).GetComponent<Renderer>().bounds.Intersects (GetComponent<Renderer>().bounds)) {//this doesn't work, should just make a rectangle, or do ray casting
 			if (Car.GetComponent<CarPhysics> ().acceleration >= 0 && mass * (Physics.gravity.y * -1f) * mu > Car.GetComponent<CarPhysics> ().mass * Car.GetComponent<CarPhysics> ().acceleration) {
 				velocity = Car.GetComponent<CarPhysics> ().velocity;
 			} 

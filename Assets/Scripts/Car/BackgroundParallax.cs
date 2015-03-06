@@ -15,7 +15,7 @@ public class BackgroundParallax : MonoBehaviour {
 	
 	void Start ()
 	{
-		tile_width = renderer.bounds.size.x;
+		tile_width = GetComponent<Renderer>().bounds.size.x;
 		left_border = tile_width * -1f;
 		right_border = tile_width;
 	}
