@@ -32,9 +32,6 @@ public class OnOffLaser : MonoBehaviour {
 	}
 	// Update is called once per frame
 	void Update () {
-//		source.transform.LookAt (target.transform);
-//		shootLine ();
-//		checkHit ();
 	}
 
 	private void tapHandler(object sender, GestureStateChangeEventArgs gestureStateChangeEventArgs)
@@ -49,7 +46,6 @@ public class OnOffLaser : MonoBehaviour {
 			line.SetWidth (.05f, .05f);
 			laser.transform.LookAt (target.transform);
 			shootLine ();
-			//checkHit ();
 		}
 	}
 
@@ -63,7 +59,6 @@ public class OnOffLaser : MonoBehaviour {
 	void checkHit(){
 		RaycastHit hit;
 		Ray testRay = new Ray(source.transform.position, source.transform.position - target.transform.position);
-		//bool raycastOn = Physics.Raycast (testRay, out hit, 500);
 		if(Physics.Raycast (testRay, out hit, 500)){
 			//line.SetPosition(1,hit.point);
 			//line.SetVertexCount(3);
@@ -83,7 +78,6 @@ public class OnOffLaser : MonoBehaviour {
 				line.SetPosition (i+1, hit.point);
 				SpriteRenderer s = hit.collider.gameObject.GetComponent<SpriteRenderer>();
 				s.color = Color.green;
-				//raycastOn = false;
 			}
 			else if(collisionName == "Right Wall" || collisionName == "Left Wall" || collisionName == "Top Wall" ||
 			   collisionName == "Bottom Wall" || collisionName == "Box1" || collisionName == "Box2" ||
@@ -92,7 +86,6 @@ public class OnOffLaser : MonoBehaviour {
 				print ("you lose");
 				line.SetVertexCount(i+2);
 				line.SetPosition (i+1, hit.point);
-				//raycastOn = false;
 			}
 			else {
 				i++;
@@ -100,6 +93,5 @@ public class OnOffLaser : MonoBehaviour {
 				shootLine ();
 			}
 		}
-		//checkHit ();
 	}
 }
