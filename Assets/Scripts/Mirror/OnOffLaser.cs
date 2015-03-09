@@ -81,6 +81,8 @@ public class OnOffLaser : MonoBehaviour {
 				line.SetVertexCount(i+2);
 				print (i+2);
 				line.SetPosition (i+1, hit.point);
+				SpriteRenderer s = hit.collider.gameObject.GetComponent<SpriteRenderer>();
+				s.color = Color.green;
 				//raycastOn = false;
 			}
 			else if(collisionName == "Right Wall" || collisionName == "Left Wall" || collisionName == "Top Wall" ||
