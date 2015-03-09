@@ -33,10 +33,22 @@ public class AddMirror : MonoBehaviour {
 			newMirror.rigidbody.useGravity = false;
 			newMirror.rigidbody.constraints = RigidbodyConstraints.FreezeAll;
 			s.sprite = mirrorSprite;
-			newMirror.transform.position = new Vector3 (0, 0, 0);
 			newMirror.transform.localScale = new Vector3 (1.5f, 1f, 1f);
 			BoxCollider b = newMirror.GetComponent<BoxCollider> ();
 			b.size = new Vector3 (1.1f, 0.15f, 0.2f);
+			if(uitray.name == "UITray Pink") {
+				newMirror.transform.position = new Vector3 (-4.7f, -2f, 0);
+			}
+			else if(uitray.name == "UITray Yellow") {
+				newMirror.transform.position = new Vector3 (3f, 4f, 0);
+			}
+			else if(uitray.name == "UITray Purple") {
+				newMirror.transform.position = new Vector3 (5f, 1.5f, 0);
+				newMirror.transform.Rotate (0,0,90f);
+			}
+			else {
+				newMirror.transform.position = new Vector3 (-4.7f, 4f, 0);
+			}
 			mirrorExists = true;
 		}
 	}
