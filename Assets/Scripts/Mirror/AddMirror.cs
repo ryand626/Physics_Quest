@@ -23,6 +23,7 @@ public class AddMirror : MonoBehaviour {
 
 	private void tapHandler(object sender, GestureStateChangeEventArgs gestureStateChangeEventArgs) {
 		if (!mirrorExists) {
+			mirrorExists = true;
 			GameObject newMirror = new GameObject ("Mirror");
 			newMirror.AddComponent ("Rigidbody");
 			newMirror.AddComponent ("BoxCollider");
@@ -49,7 +50,6 @@ public class AddMirror : MonoBehaviour {
 			else {
 				newMirror.transform.position = new Vector3 (-4.7f, 4f, 0);
 			}
-			mirrorExists = true;
 		}
 	}
 
