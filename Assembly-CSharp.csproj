@@ -53,6 +53,7 @@
      <Compile Include="Assets\Scripts\Car\Gas.cs" />
      <Compile Include="Assets\Scripts\Car\PlayerControls.cs" />
      <Compile Include="Assets\Scripts\Car\RoadController.cs" />
+     <Compile Include="Assets\Scripts\Level Select\levelSelect.cs" />
      <Compile Include="Assets\Scripts\Magnet\ElectrostaticForce.cs" />
      <Compile Include="Assets\Scripts\Magnet\Gravitate.cs" />
      <Compile Include="Assets\Scripts\Magnet\Minus.cs" />
@@ -71,7 +72,6 @@
      <Compile Include="Assets\Scripts\ftl\ftlRotate.cs" />
      <Compile Include="Assets\Scripts\ftl\ftlScale.cs" />
      <Compile Include="Assets\Scripts\ftl\ftlTap.cs" />
-     <Compile Include="Assets\levelSelect.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/4.6.3/UnityEngine.UI.dll</HintPath>
  </Reference>
