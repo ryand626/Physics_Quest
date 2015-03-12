@@ -71,23 +71,24 @@
      <Compile Include="Assets\Scripts\ftl\ftlRotate.cs" />
      <Compile Include="Assets\Scripts\ftl\ftlScale.cs" />
      <Compile Include="Assets\Scripts\ftl\ftlTap.cs" />
+     <Compile Include="Assets\levelSelect.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/4.6.3/UnityEngine.UI.dll</HintPath>
  </Reference>
  <Reference Include="OSCsharp">
- <HintPath>/Users/Emily/Desktop/Tufts/COMP_97/Physics_Quest/Assets/Scripts/TS/OSCsharp.dll</HintPath>
+ <HintPath>/Users/Ryan/Documents/Senior Design/Physics_Quest/Assets/Scripts/TS/OSCsharp.dll</HintPath>
  </Reference>
  <Reference Include="TouchScript">
- <HintPath>/Users/Emily/Desktop/Tufts/COMP_97/Physics_Quest/Assets/Scripts/TS/TouchScript.dll</HintPath>
+ <HintPath>/Users/Ryan/Documents/Senior Design/Physics_Quest/Assets/Scripts/TS/TouchScript.dll</HintPath>
  </Reference>
  <Reference Include="TouchScript.TUIO">
- <HintPath>/Users/Emily/Desktop/Tufts/COMP_97/Physics_Quest/Assets/Scripts/TS/TouchScript.TUIO.dll</HintPath>
+ <HintPath>/Users/Ryan/Documents/Senior Design/Physics_Quest/Assets/Scripts/TS/TouchScript.TUIO.dll</HintPath>
  </Reference>
  <Reference Include="TouchScript.Windows">
- <HintPath>/Users/Emily/Desktop/Tufts/COMP_97/Physics_Quest/Assets/Scripts/TS/TouchScript.Windows.dll</HintPath>
+ <HintPath>/Users/Ryan/Documents/Senior Design/Physics_Quest/Assets/Scripts/TS/TouchScript.Windows.dll</HintPath>
  </Reference>
  <Reference Include="TUIOsharp">
- <HintPath>/Users/Emily/Desktop/Tufts/COMP_97/Physics_Quest/Assets/Scripts/TS/TUIOsharp.dll</HintPath>
+ <HintPath>/Users/Ryan/Documents/Senior Design/Physics_Quest/Assets/Scripts/TS/TUIOsharp.dll</HintPath>
  </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

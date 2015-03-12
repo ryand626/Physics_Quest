@@ -73,5 +73,6 @@
 'Assets/Scripts/ftl/ftlRotate.cs'
 'Assets/Scripts/ftl/ftlScale.cs'
 'Assets/Scripts/ftl/ftlTap.cs'
+'Assets/levelSelect.cs'
 -r:'/Applications/Unity/Unity.app/Contents/Frameworks/Mono/lib/mono/unity/System.Runtime.Serialization.dll'
 -r:'/Applications/Unity/Unity.app/Contents/Frameworks/Mono/lib/mono/unity/System.Xml.Linq.dll'
