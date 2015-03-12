@@ -25,9 +25,12 @@ public class AddMirror : MonoBehaviour {
 		if (!mirrorExists) {
 			mirrorExists = true;
 			GameObject newMirror = new GameObject ("Mirror");
-			newMirror.AddComponent ("Rigidbody");
-			newMirror.AddComponent ("BoxCollider");
-			newMirror.AddComponent ("SpriteRenderer");
+			//newMirror.AddComponent ("Rigidbody");
+			newMirror.AddComponent<Rigidbody>();
+			//newMirror.AddComponent ("BoxCollider");
+			newMirror.AddComponent<BoxCollider>();
+			//newMirror.AddComponent ("SpriteRenderer");
+			newMirror.AddComponent<SpriteRenderer>();
 			//newMirror.AddComponent("Rotate Gesture");
 			//newMirror.AddComponent("Pan Gesture");
 			SpriteRenderer s = newMirror.GetComponent<SpriteRenderer> ();
