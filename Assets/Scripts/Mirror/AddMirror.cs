@@ -1,4 +1,5 @@
-﻿using TouchScript;
+﻿using System;
+//using TouchScript;
 using TouchScript.Gestures;
 using UnityEngine;
 using UnityEngine.UI;
@@ -10,7 +11,7 @@ public class AddMirror : MonoBehaviour {
 	private bool mirrorExists;
 	// Use this for initialization
 	void Start () {
-		GetComponent<TapGesture>().StateChanged += tapHandler;
+		////GetComponent<TapGesture>().StateChanged += tappedHandler;
 		mirrorExists = false;
 		//GetComponent<PanGesture>().StateChanged += panHandler;
 		//GetComponent<RotateGesture>().StateChanged += rotateHandler;
@@ -21,25 +22,27 @@ public class AddMirror : MonoBehaviour {
 	
 	}
 
-	private void tapHandler(object sender, GestureStateChangeEventArgs gestureStateChangeEventArgs) {
+	private void tappedHandler(object sender, EventArgs e) {
+		print ("You tapped " + gameObject.name);
+		print (mirrorExists);
 		if (!mirrorExists) {
 			mirrorExists = true;
-			GameObject newMirror = new GameObject ("Mirror");
+			GameObject newMirror = (GameObject)Instantiate(Resources.Load("Mirror/Mirror"));
 			//newMirror.AddComponent ("Rigidbody");
-			newMirror.AddComponent<Rigidbody>();
+			////newMirror.AddComponent<Rigidbody>();
 			//newMirror.AddComponent ("BoxCollider");
-			newMirror.AddComponent<BoxCollider>();
+			////newMirror.AddComponent<BoxCollider>();
 			//newMirror.AddComponent ("SpriteRenderer");
-			newMirror.AddComponent<SpriteRenderer>();
+			////newMirror.AddComponent<SpriteRenderer>();
 			//newMirror.AddComponent("Rotate Gesture");
 			//newMirror.AddComponent("Pan Gesture");
 			SpriteRenderer s = newMirror.GetComponent<SpriteRenderer> ();
-			newMirror.rigidbody.useGravity = false;
-			newMirror.rigidbody.constraints = RigidbodyConstraints.FreezeAll;
+			////newMirror.rigidbody.useGravity = false;
+			////newMirror.rigidbody.constraints = RigidbodyConstraints.FreezeAll;
 			s.sprite = mirrorSprite;
-			newMirror.transform.localScale = new Vector3 (1.5f, 1f, 1f);
-			BoxCollider b = newMirror.GetComponent<BoxCollider> ();
-			b.size = new Vector3 (1.1f, 0.15f, 0.2f);
+			////newMirror.transform.localScale = new Vector3 (1.5f, 1f, 1f);
+			////BoxCollider b = newMirror.GetComponent<BoxCollider> ();
+			////b.size = new Vector3 (1.1f, 0.15f, 0.2f);
 			if(uitray.name == "UITray Pink") {
 				newMirror.transform.position = new Vector3 (-4.7f, -2f, 0);
 			}
@@ -56,9 +59,20 @@ public class AddMirror : MonoBehaviour {
 		}
 	}
 
-	private void panHandler(object sender, GestureStateChangeEventArgs gestureStateChangeEventArgs) {
+	private void OnEnable()
+	{
+		GetComponent<TapGesture> ().Tapped += tappedHandler;
 	}
-
-	private void rotateHandler(object sender, GestureStateChangeEventArgs gestureStateChangeEventArgs) {
+	private void OnDisable()
+	{
+		if (this.enabled) {
+			GetComponent<TapGesture> ().Tapped -= tappedHandler;
+		}
 	}
+//
+//	private void panHandler(object sender, GestureStateChangeEventArgs gestureStateChangeEventArgs) {
+//	}
+//
+//	private void rotateHandler(object sender, GestureStateChangeEventArgs gestureStateChangeEventArgs) {
+//	}
 }

@@ -1,4 +1,5 @@
-﻿using TouchScript;
+﻿using System;
+using TouchScript;
 using TouchScript.Gestures;
 using UnityEngine;
 using UnityEngine.UI;
@@ -23,7 +24,7 @@ public class OnOffLaser : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		i = 1;
-		GetComponent<TapGesture>().StateChanged += tapHandler;
+		////GetComponent<TapGesture>().StateChanged += tapHandler;
 		currImage = uitray.GetComponent<Image>();
 		isOn = false;
 		line = gameObject.AddComponent<LineRenderer> ();
@@ -34,7 +35,7 @@ public class OnOffLaser : MonoBehaviour {
 	void Update () {
 	}
 
-	private void tapHandler(object sender, GestureStateChangeEventArgs gestureStateChangeEventArgs)
+	private void tapHandler(object sender, EventArgs e)
 	{
 		if (!isOn) {
 			isOn = true;
@@ -92,6 +93,17 @@ public class OnOffLaser : MonoBehaviour {
 				source.transform.LookAt (target.transform);
 				shootLine ();
 			}
+		}
+	}
+
+	private void OnEnable()
+	{
+		GetComponent<TapGesture> ().Tapped += tapHandler;
+	}
+	private void OnDisable()
+	{
+		if (this.enabled) {
+			GetComponent<TapGesture> ().Tapped -= tapHandler;
 		}
 	}
 }
