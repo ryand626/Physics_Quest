@@ -1,29 +1,24 @@
-﻿using TouchScript;
-using TouchScript.Gestures;
+﻿using System;
 using UnityEngine;
-using UnityEngine.UI;
-using System.Collections;
+using TouchScript;
+using TouchScript.Gestures;
+
+
 
 public class RotateLaser : MonoBehaviour {
-	public GameObject button;
-	public GameObject laser;
-	// Use this for initialization
-	void Start () {
-		GetComponent<TapGesture>().StateChanged += tapHandler;
 
+	private void OnEnable()
+	{
+		GetComponent<RotateGesture> ().Rotated += rotateHandler;
 	}
-	
-	// Update is called once per frame
-	void Update () {
-	
+	private void OnDisable()
+	{
+		if (this.enabled) {
+			GetComponent<RotateGesture> ().Rotated -= rotateHandler;
+		}
 	}
-
-	private void tapHandler(object sender, GestureStateChangeEventArgs gestureStateChangeEventArgs) {
-		if (button.name == "Left Rotate") {
-			laser.transform.Rotate(0,0,1);
-		}
-		if (button.name == "Right Rotate") {
-			laser.transform.Rotate(0,0,-1);
-		}
+	private void rotateHandler(object sender, EventArgs e) {
+		RotateGesture rotation = (RotateGesture)sender;
+		transform.Rotate (0, 0, rotation.DeltaRotation);
 	}
 }

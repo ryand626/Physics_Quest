@@ -31,8 +31,16 @@ public class OnOffLaser : MonoBehaviour {
 		bounceNumber = 1;
 		source = laser;
 	}
-	// Update is called once per frame
-	void Update () {
+
+	private void OnEnable()
+	{
+		GetComponent<TapGesture> ().Tapped += tapHandler;
+	}
+	private void OnDisable()
+	{
+		if (this.enabled) {
+			GetComponent<TapGesture> ().Tapped -= tapHandler;
+		}
 	}
 
 	private void tapHandler(object sender, EventArgs e)
@@ -94,16 +102,5 @@ public class OnOffLaser : MonoBehaviour {
 				shootLine ();
 			}
 		}
-	}
-
-	private void OnEnable()
-	{
-		GetComponent<TapGesture> ().Tapped += tapHandler;
-	}
-	private void OnDisable()
-	{
-		if (this.enabled) {
-			GetComponent<TapGesture> ().Tapped -= tapHandler;
-		}
-	}
+	}	
 }
