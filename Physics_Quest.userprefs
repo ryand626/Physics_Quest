@@ -1,8 +1,10 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Mirror/AddMirror.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Mirror/RotateLaser.cs">
     <Files>
-      <File FileName="Assets/Scripts/Mirror/AddMirror.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Mirror/AddMirror.cs" Line="14" Column="2" />
+      <File FileName="Assets/Scripts/Mirror/OnOffLaser.cs" Line="17" Column="28" />
+      <File FileName="Assets/Scripts/Mirror/RotateLaser.cs" Line="20" Column="53" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

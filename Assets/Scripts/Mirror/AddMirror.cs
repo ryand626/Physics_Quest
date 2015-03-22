@@ -35,7 +35,7 @@ public class AddMirror : MonoBehaviour {
 	private void tappedHandler(object sender, EventArgs e) {
 		if (!mirrorExists) {
 			mirrorExists = true;
-			GameObject newMirror = (GameObject)Instantiate(Resources.Load("Mirror/Mirror"));
+			GameObject newMirror = (GameObject)Instantiate(Resources.Load("Prefabs/Mirror/Mirror"));
 
 			// Update the sprite depending on the player's mirror sprite
 			SpriteRenderer s = newMirror.GetComponent<SpriteRenderer> ();

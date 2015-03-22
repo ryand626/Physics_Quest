@@ -63,6 +63,7 @@
      <Compile Include="Assets\Scripts\Mirror\AddMirror.cs" />
      <Compile Include="Assets\Scripts\Mirror\OnOffLaser.cs" />
      <Compile Include="Assets\Scripts\Mirror\RotateLaser.cs" />
+     <Compile Include="Assets\Scripts\Mirror\moveMirror.cs" />
      <Compile Include="Assets\Scripts\ftl\ftlBlobDebugger.cs" />
      <Compile Include="Assets\Scripts\ftl\ftlFlick.cs" />
      <Compile Include="Assets\Scripts\ftl\ftlLongPress.cs" />
