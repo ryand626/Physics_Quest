@@ -4,6 +4,8 @@ using TouchScript.Gestures;
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+// TODO: split this into two different scripts, one that handles the on/off, and the other that handles the game logic
+
 
 public class OnOffLaser : MonoBehaviour {
 	public GameObject uitray;
@@ -63,6 +65,7 @@ public class OnOffLaser : MonoBehaviour {
 		//line.SetPosition (i, target.transform.position);
 		line.SetPosition (i, nextPosition);
 		checkHit ();
+
 	}
 	
 	void checkHit(){
@@ -93,6 +96,7 @@ public class OnOffLaser : MonoBehaviour {
 			   collisionName == "Box3" || collisionName == "Box4"){
 				print (collisionName);
 				print ("you lose");
+				Application.LoadLevel(2);
 				line.SetVertexCount(i+2);
 				line.SetPosition (i+1, hit.point);
 			}

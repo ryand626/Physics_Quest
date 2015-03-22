@@ -1,16 +1,14 @@
 ﻿using System;
-//using TouchScript;
-using TouchScript.Gestures;
 using UnityEngine;
-using UnityEngine.UI;
-using System.Collections;
+using TouchScript;
+using TouchScript.Gestures;
 
 public class AddMirror : MonoBehaviour {
 	public GameObject uitray;
 	public Sprite mirrorSprite;
-	private bool mirrorExists;
 
-	public GameObject mirror;
+	private bool mirrorExists;
+	private GameObject mirror;
 	
 	void Start () {
 		if (!uitray) {
@@ -19,6 +17,7 @@ public class AddMirror : MonoBehaviour {
 		mirrorExists = false;
 	}
 
+	// Add the events for tap creation and rotating of the mirror
 	private void OnEnable()
 	{
 		GetComponent<TapGesture> ().Tapped += tappedHandler;
@@ -32,6 +31,7 @@ public class AddMirror : MonoBehaviour {
 		}
 	}
 
+	// Create a mirror when tapped (and a mirror doesn't already exist)
 	private void tappedHandler(object sender, EventArgs e) {
 		if (!mirrorExists) {
 			mirrorExists = true;
@@ -64,16 +64,14 @@ public class AddMirror : MonoBehaviour {
 		}
 	}
 
-
-
+	// Apply rotation to UI and Mirror
 	private void rotateHandler(object sender, EventArgs e) {
 		RotateGesture rotation = (RotateGesture)sender;
-		RectTransform bounds = GetComponent<RectTransform> ();
-		if (bounds && mirror) {
-			transform.Rotate(0,0,rotation.DeltaRotation);//bounds.Rotate(0, 0, rotation.DeltaRotation);
+		if (mirror) {
+			transform.Rotate(0,0,rotation.DeltaRotation);
 			mirror.transform.Rotate(0,0,rotation.DeltaRotation);
 		} else {
-			print ("No Rect Transform!");
+			print ("No Mirror!");
 		}
 	}
 }
