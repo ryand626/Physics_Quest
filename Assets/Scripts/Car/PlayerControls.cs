@@ -12,6 +12,7 @@ public class PlayerControls : MonoBehaviour {
 	public Sprite beach;
 	public int ball_type;
 
+	private bool should_move;
 	private int score;
 	public Text text;
 
@@ -22,7 +23,7 @@ public class PlayerControls : MonoBehaviour {
 
 	// Variables
 	public float playerSpeed;
-	private float playerDirection;
+	private int playerDirection;
 	
 	private float offset;
 
@@ -30,19 +31,17 @@ public class PlayerControls : MonoBehaviour {
 	void Start () {
 		ball_type = 0;
 		playerSpeed = 0f;
-		playerDirection = -1f;
+		playerDirection = -1;
 		score = 0;
+		should_move = false;
 	}
 	
 	// Move the car according to the road speed, and the car speed
 	void Update () {
-
+		if (should_move) {
 		if (Input.GetKey("escape")) { Application.Quit(); } 
 
 
-		//Road.backgroundSpeed * Road.backgroundDirection * .2f +
-		offset =  playerSpeed * playerDirection * Road.backgroundDirection; // player direction doesn't do anything atm, so i'm using the road direction as a placeholder
-		transform.Translate (offset * Time.deltaTime, 0f, 0f);
 
 		if (Input.GetKey (KeyCode.A)) {
 			Accelerate();
@@ -50,12 +49,19 @@ public class PlayerControls : MonoBehaviour {
 		if (Input.GetKey (KeyCode.B)) {
 			Brake();
 		}
-		if (!Input.anyKey) {
-			Car.acceleration = 0f;
-		}
+		//if (!Input.anyKey) {
+			//Car.acceleration = 0f;
+		//}
 		// Update the velocity of the car to be used by the ball script
 		Car.velocity = playerSpeed * playerDirection; //Road.backgroundDirection; // same here
+		print (Car.velocity);
 		text.text = score.ToString();
+		//Road.backgroundSpeed * Road.backgroundDirection * .2f +
+		offset = playerSpeed * playerDirection; // player direction doesn't do anything atm, so i'm using the road direction as a placeholder
+		print ("OFFSET: " + offset * Time.deltaTime);
+
+			transform.Translate (offset * Time.deltaTime, 0, 0);
+		}
 	}
 
 	// Accelerate the car up to the top_speed
@@ -66,19 +72,22 @@ public class PlayerControls : MonoBehaviour {
 		}else{
 			playerSpeed = top_speed;
 		}
+		should_move = true;
 	}
 
 	// Deaccelerate the car down to 0
 	public void Brake(){
+		//print ("playerSpeed" + playerSpeed);
 		if(playerSpeed - brake_factor > 0f){
 			playerSpeed -= brake_factor;
 			Car.acceleration = brake_factor * -1f;
 		}else{
 			playerSpeed = 0f;
+			should_move = false;
 		}
 	}
 	void OnCollisionEnter(Collision wall) {
-		print ("walls");
+		//print ("walls");
 		if (wall.collider.tag == "right") {
 			score++;
 			ball_type++;
@@ -98,8 +107,9 @@ public class PlayerControls : MonoBehaviour {
 				Ball.GetComponent<CarBall>().mass = 1;
 			}
 		}
-		playerSpeed = playerSpeed/2;
+		playerSpeed = playerSpeed/2f;
 		playerDirection = -playerDirection;
+		//Road.backgroundDirection = -Road.backgroundDirection;
 	}
 	public void BallFell() {
 		score -= 2;

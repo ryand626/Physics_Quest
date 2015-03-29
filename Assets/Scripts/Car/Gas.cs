@@ -28,7 +28,7 @@ public class Gas : MonoBehaviour {
 	}
 	private void releaseHandler(object sender, GestureStateChangeEventArgs gestureStateChangeEventArgs)
 	{
-		print ("oh relesased");
+
 		if (pressed)
 		{
 			pressed = false;

@@ -22,7 +22,7 @@ public class BackgroundParallax : MonoBehaviour {
 	
 	void Update ()
 	{
-		offset = Vector3.right * scrollDirection * scrollSpeed * Time.deltaTime;
+		/*offset = Vector3.right * scrollDirection * scrollSpeed * Time.deltaTime;
 		transform.position = transform.position + offset;
 
 		if (transform.position.x < left_border) {
@@ -30,6 +30,6 @@ public class BackgroundParallax : MonoBehaviour {
 		}
 		if (transform.position.x > right_border) {
 			transform.position = new Vector3(left_border, transform.position.y,transform.position.z);
-		}
+		}*/
 	}
 }
