@@ -21,13 +21,11 @@ public class AddMirror : MonoBehaviour {
 	private void OnEnable()
 	{
 		GetComponent<TapGesture> ().Tapped += tappedHandler;
-		GetComponent<RotateGesture> ().Rotated += rotateHandler;
 	}
 	private void OnDisable()
 	{
 		if (this.enabled) {
 			GetComponent<TapGesture> ().Tapped -= tappedHandler;
-			GetComponent<RotateGesture> ().Rotated -= rotateHandler;
 		}
 	}
 
@@ -43,7 +41,7 @@ public class AddMirror : MonoBehaviour {
 
 			// Set the position and names
 			if(uitray.name == "UITray Pink") {
-				newMirror.transform.position = new Vector3 (-4.7f, -2f, 0);
+				newMirror.transform.position = new Vector3 (-4.7f, 0.7f, 0);
 				newMirror.name = "Pink Mirror";
 			}
 			else if(uitray.name == "UITray Yellow") {
@@ -61,6 +59,9 @@ public class AddMirror : MonoBehaviour {
 
 			newMirror.transform.rotation = transform.rotation;
 			mirror = newMirror;
+			mirror.AddComponent("RotateGesture");
+			mirror.GetComponent<RotateGesture> ().Rotated += rotateHandler;
+			//not sure where to remove the rotate handler
 		}
 	}
 
@@ -68,7 +69,6 @@ public class AddMirror : MonoBehaviour {
 	private void rotateHandler(object sender, EventArgs e) {
 		RotateGesture rotation = (RotateGesture)sender;
 		if (mirror) {
-			transform.Rotate(0,0,rotation.DeltaRotation);
 			mirror.transform.Rotate(0,0,rotation.DeltaRotation);
 		} else {
 			print ("No Mirror!");
